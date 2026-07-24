@@ -187,21 +187,37 @@ AND Age > 65;
 Using the Employees table above, write SQL queries for the following:
 
 Question 1
-
 Show all employees sorted by Salary from highest to lowest.
+SELECT *
+FROM Employees
+ORDER BY Salary DESC;
 
 Question 2
-
 Show all employees sorted by Name alphabetically.
+SELECT *
+FROM Employees
+ORDER BY Name ASC;
+or SELECT *
+FROM Employees
+ORDER BY Name;
 
 Question 3
-
 Show employees in the HR department whose salary is greater than 40,000.
+SELECT *
+FROM Employees
+WHERE Department = ‘HR’
+AND Salary > 40000;
 
 Question 4
-
 Show employees who work in Finance OR IT.
+SELECT *
+FROM Employees
+WHERE Department = ‘Finance’
+OR Department = ‘IT’;
 
 Question 5 (Challenge)
-
 Show only the Name and Salary of employees in the IT department, ordered by salary from highest to lowest.
+SELECT Name, Salary
+FROM Employees
+WHERE Department = ‘IT’
+ORDER BY Salary DESC;
