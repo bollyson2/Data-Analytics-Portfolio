@@ -273,5 +273,5 @@ What is the difference between INNER JOIN and LEFT JOIN?
 What is a Primary Key?
 What is a Foreign Key?
 What is a Subquery?
-
+What is the difference between IN and EXISTS in SQL?
 If you can answer these confidently, you'll know you're retaining the concepts rather than just copying syntax.
