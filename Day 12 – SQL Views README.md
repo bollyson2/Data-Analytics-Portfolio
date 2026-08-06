@@ -158,7 +158,6 @@ SELECT *
 FROM PremiumCustomers;
 
 📝 Practice Exercises
-
 Use the Employees table.
 Question 1
 Create a view called ITEmployees that displays:
@@ -179,55 +178,73 @@ Display all records from the ITEmployees view.
 
 
 Question 3
-
 Create a view called HighEarners showing employees earning £50,000 or more.
-
 Display:
-
 Name
 Salary
+CREATE VIEW HighEarners AS
+SELECT
+    Name,
+    Salary
+FROM Employees
+WHERE Salary >=50000;
+
 Question 4
-
 Display only:
-
 Name
 Salary
-
 from the HighEarners view.
+SELECT
+    Name,
+    Salary
+FROM HighEarners;
 
 Question 5
-
 Delete the HighEarners view.
+DROP VIEW HighEarners;
 
 ⭐ Challenge 1
-
 Create a view called EmployeeSummary that displays:
-
 Name
 Department
 Salary
-
 Create another column called SalaryBand using:
-
 60,000+ → Excellent
 50,000–59,999 → Good
 40,000–49,999 → Average
 Below 40,000 → Low
+SELECT
+    Name,
+    Department,
+    Salary,
+    CASE
+       WHEN Salary >= 60000 THEN 'Excellent' WHEN Salary >= 50000 THEN 'Good' WHEN Salary >= 40000 THEN 'Average' ELSE 'Low' END AS SalaryBand FROM Employees;
+
 ⭐⭐ Challenge 2
-
-Create a view called BonusEligible.
-
+SELECT *
+FROM BonusEligible;
 Display:
-
 Name
 Department
 Salary
 BonusStatus
-
 Rules:
-
-Salary ≥45,000 → Eligible
+Salary >=45000 → Eligible
 Otherwise → Not Eligible
+CREATE VIEW BonusEligible AS
+
+SELECT
+    Name,
+    Department,
+    Salary,
+
+CASE
+WHEN Salary >=45000 THEN 'Eligible for Bonus'
+ELSE 'Not Eligible'
+END AS BonusStatus
+
+FROM Employees;
+
 
 Then display all records from the view.
 
